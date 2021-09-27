@@ -30,6 +30,8 @@ function Login() {
     instance
       .post("/api/login", payload)
       .then((res) => {
+        console.log(res.data.data);
+        window.localStorage.setItem("token", res.data.data);
         history.push("/home");
       })
       .catch((err) => console.log(err));
